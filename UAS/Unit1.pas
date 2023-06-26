@@ -10,7 +10,6 @@ uses
 
 type
   TForm1 = class(TForm)
-    l2: TLabel;
     dbgrd1: TDBGrid;
     b1: TButton;
     b2: TButton;
@@ -74,6 +73,7 @@ implementation
 
 procedure TForm1.b1Click(Sender: TObject);
 begin
+ bersih;
 b1.Enabled:= false;
 b2.Enabled:= True;
 b3.Enabled:= False;
@@ -215,6 +215,9 @@ e_2.Clear;
 e_3.Clear;
 e_4.Clear;
 e_5.Clear;
+e_6.Clear;
+e_7.Clear;
+e_8.Clear;
 end;
 
 procedure TForm1.FormShow(Sender: TObject);
