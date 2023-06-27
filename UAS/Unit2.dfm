@@ -1,6 +1,6 @@
 object Form2: TForm2
-  Left = 115
-  Top = 164
+  Left = 298
+  Top = 170
   Width = 1044
   Height = 540
   Caption = 'Form2'
@@ -263,12 +263,12 @@ object Form2: TForm2
     TabOrder = 14
     Text = '---PILIH STATUS---'
     Items.Strings = (
-      'AKTIF'
-      'TIDAK AKTIF')
+      'Menikah'
+      'Tidak Menikah')
   end
   object dbgrd1: TDBGrid
-    Left = 64
-    Top = 320
+    Left = 36
+    Top = 276
     Width = 737
     Height = 120
     DataSource = ds1
@@ -287,7 +287,7 @@ object Form2: TForm2
       end
       item
         Expanded = False
-        FieldName = 'Nama wali kelas'
+        FieldName = 'Nama_wali_kelas'
         Width = 150
         Visible = True
       end
@@ -314,7 +314,7 @@ object Form2: TForm2
       end
       item
         Expanded = False
-        FieldName = 'Wali Kelas'
+        FieldName = 'Wali_Kelas'
         Visible = True
       end
       item
@@ -330,7 +330,7 @@ object Form2: TForm2
       end
       item
         Expanded = False
-        FieldName = 'kehadiran total'
+        FieldName = 'kehadiran_total'
         Width = 150
         Visible = True
       end>
@@ -348,15 +348,6 @@ object Form2: TForm2
     LibraryLocation = 'C:\Users\dayat\OneDrive\Dokumen\UAS\libmysql.dll'
     Left = 736
     Top = 20
-  end
-  object zqry1: TZQuery
-    Connection = con1
-    Active = True
-    SQL.Strings = (
-      'SELECT * FROM wali_kelas')
-    Params = <>
-    Left = 736
-    Top = 128
   end
   object ds1: TDataSource
     DataSet = zqry1
@@ -380,7 +371,7 @@ object Form2: TForm2
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 45097.373740509300000000
-    ReportOptions.LastChange = 45100.702371041700000000
+    ReportOptions.LastChange = 45104.518903599540000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -634,7 +625,7 @@ object Form2: TForm2
           Width = 98.267780000000000000
           Height = 71.811070000000000000
           ShowHint = False
-          DataField = 'Nama wali kelas'
+          DataField = 'Nama_wali_kelas'
           DataSet = frxdbdtst1
           DataSetName = 'frxDBDataset'
           Font.Charset = DEFAULT_CHARSET
@@ -645,7 +636,7 @@ object Form2: TForm2
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset."Nama wali kelas"]')
+            '[frxDBDataset."Nama_wali_kelas"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -734,7 +725,7 @@ object Form2: TForm2
           Width = 120.944960000000000000
           Height = 71.811070000000000000
           ShowHint = False
-          DataField = 'Wali Kelas'
+          DataField = 'Wali_Kelas'
           DataSet = frxdbdtst1
           DataSetName = 'frxDBDataset'
           Font.Charset = DEFAULT_CHARSET
@@ -745,7 +736,7 @@ object Form2: TForm2
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset."Wali Kelas"]')
+            '[frxDBDataset."Wali_Kelas"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -774,7 +765,7 @@ object Form2: TForm2
           Width = 124.401670000000000000
           Height = 71.811070000000000000
           ShowHint = False
-          DataField = 'kehadiran total'
+          DataField = 'kehadiran_total'
           DataSet = frxdbdtst1
           DataSetName = 'frxDBDataset'
           Font.Charset = DEFAULT_CHARSET
@@ -785,7 +776,7 @@ object Form2: TForm2
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset."kehadiran total"]')
+            '[frxDBDataset."kehadiran_total"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -814,11 +805,19 @@ object Form2: TForm2
   end
   object zqry2: TZQuery
     Connection = con1
-    Active = True
     SQL.Strings = (
       'select * from wali_kelas')
     Params = <>
     Left = 680
     Top = 124
+  end
+  object zqry1: TZQuery
+    Connection = con1
+    Active = True
+    SQL.Strings = (
+      'Select * from wali_kelas')
+    Params = <>
+    Left = 736
+    Top = 128
   end
 end
