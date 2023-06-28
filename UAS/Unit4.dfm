@@ -1,8 +1,8 @@
 object Form4: TForm4
-  Left = 192
-  Top = 125
-  Width = 1044
-  Height = 540
+  Left = 201
+  Top = 159
+  Width = 803
+  Height = 435
   Caption = 'Form4'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET

@@ -1,9 +1,9 @@
-object Form3: TForm3
-  Left = 358
-  Top = 163
-  Width = 676
-  Height = 369
-  Caption = 'Form3'
+object Form5: TForm5
+  Left = 382
+  Top = 157
+  Width = 673
+  Height = 361
+  Caption = 'Form5'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,9 +17,9 @@ object Form3: TForm3
   object lbll1: TLabel
     Left = 8
     Top = 16
-    Width = 65
+    Width = 59
     Height = 15
-    Caption = 'Nama Kelas'
+    Caption = 'Nama Poin'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -30,9 +30,9 @@ object Form3: TForm3
   object lbll3: TLabel
     Left = 8
     Top = 56
-    Width = 46
+    Width = 31
     Height = 15
-    Caption = 'Jurusan'
+    Caption = 'Bobot'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -43,9 +43,9 @@ object Form3: TForm3
   object lbll6: TLabel
     Left = 4
     Top = 92
-    Width = 93
+    Width = 50
     Height = 15
-    Caption = 'Total Kehadiraan'
+    Caption = 'Tipe poin'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -150,24 +150,24 @@ object Form3: TForm3
     Columns = <
       item
         Expanded = False
-        FieldName = 'Id_kelas'
+        FieldName = 'Id_poin'
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'Nama_kelas'
-        Width = 140
+        FieldName = 'Nama_poin'
+        Width = 130
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'Jurusan'
-        Width = 150
+        FieldName = 'Bobot'
+        Width = 130
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'Total_kehadiran'
+        FieldName = 'Tipe_poin'
         Width = 150
         Visible = True
       end>
@@ -290,7 +290,7 @@ object Form3: TForm3
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            'Nama Wali Kelas')
+            'Nama Poin')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -307,7 +307,7 @@ object Form3: TForm3
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            'Jurusan')
+            'Bobot')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -324,7 +324,7 @@ object Form3: TForm3
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            'Total Kehadiran')
+            'Tipe Poin')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -359,7 +359,7 @@ object Form3: TForm3
           Width = 281.267780000000000000
           Height = 34.015770000000000000
           ShowHint = False
-          DataField = 'Nama_kelas'
+          DataField = 'Nama_poin'
           DataSet = frxdbdtst1
           DataSetName = 'frxDBDataset'
           Font.Charset = DEFAULT_CHARSET
@@ -370,7 +370,7 @@ object Form3: TForm3
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset."Nama_kelas"]')
+            '[frxDBDataset."Nama_poin"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -380,7 +380,7 @@ object Form3: TForm3
           Width = 326.488250000000000000
           Height = 34.015770000000000000
           ShowHint = False
-          DataField = 'Jurusan'
+          DataField = 'Bobot'
           DataSet = frxdbdtst1
           DataSetName = 'frxDBDataset'
           Font.Charset = DEFAULT_CHARSET
@@ -391,7 +391,7 @@ object Form3: TForm3
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset."Jurusan"]')
+            '[frxDBDataset."Bobot"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -401,7 +401,7 @@ object Form3: TForm3
           Width = 404.401670000000000000
           Height = 34.015770000000000000
           ShowHint = False
-          DataField = 'Total_kehadiran'
+          DataField = 'Tipe_poin'
           DataSet = frxdbdtst1
           DataSetName = 'frxDBDataset'
           Font.Charset = DEFAULT_CHARSET
@@ -412,7 +412,7 @@ object Form3: TForm3
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset."Total_kehadiran"]')
+            '[frxDBDataset."Tipe_poin"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -421,9 +421,8 @@ object Form3: TForm3
   end
   object zqry2: TZQuery
     Connection = con1
-    Active = True
     SQL.Strings = (
-      'select * from kelas')
+      'SELECT * FROM poin')
     Params = <>
     Left = 572
     Top = 116
@@ -432,7 +431,7 @@ object Form3: TForm3
     Connection = con1
     Active = True
     SQL.Strings = (
-      'Select * from kelas')
+      'SELECT * FROM poin')
     Params = <>
     Left = 616
     Top = 112
