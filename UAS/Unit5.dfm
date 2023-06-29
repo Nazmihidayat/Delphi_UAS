@@ -1,6 +1,6 @@
 object Form5: TForm5
-  Left = 382
-  Top = 157
+  Left = 344
+  Top = 232
   Width = 673
   Height = 361
   Caption = 'Form5'
@@ -252,7 +252,7 @@ object Form5: TForm5
           Font.Style = [fsBold]
           HAlign = haCenter
           Memo.UTF8 = (
-            'Laporan Data Wali Kelas')
+            'Laporan Data Poin')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -421,6 +421,7 @@ object Form5: TForm5
   end
   object zqry2: TZQuery
     Connection = con1
+    Active = True
     SQL.Strings = (
       'SELECT * FROM poin')
     Params = <>

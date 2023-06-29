@@ -252,7 +252,7 @@ object Form3: TForm3
           Font.Style = [fsBold]
           HAlign = haCenter
           Memo.UTF8 = (
-            'Laporan Data Wali Kelas')
+            'Laporan Data Kelas')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -290,7 +290,7 @@ object Form3: TForm3
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            'Nama Wali Kelas')
+            'Kelas')
           ParentFont = False
           VAlign = vaCenter
         end
