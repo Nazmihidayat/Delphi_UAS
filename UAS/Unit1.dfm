@@ -732,7 +732,6 @@ object Form1: TForm1
           Width = 34.015770000000000000
           Height = 71.811070000000000000
           ShowHint = False
-          DataField = 'Id_Siswa'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset'
           Font.Charset = DEFAULT_CHARSET
@@ -743,7 +742,7 @@ object Form1: TForm1
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset."Id_Siswa"]')
+            '[Line]')
           ParentFont = False
           VAlign = vaCenter
         end

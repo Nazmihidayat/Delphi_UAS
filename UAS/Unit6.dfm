@@ -1,6 +1,6 @@
 object Form6: TForm6
-  Left = 332
-  Top = 166
+  Left = 302
+  Top = 231
   Width = 804
   Height = 455
   Caption = 'Form6'
@@ -420,7 +420,7 @@ object Form6: TForm6
           Font.Style = [fsBold]
           HAlign = haCenter
           Memo.UTF8 = (
-            'Laporan Data Wali Kelas')
+            'Laporan Data Orang Tua')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -610,7 +610,6 @@ object Form6: TForm6
           Width = 34.015770000000000000
           Height = 71.811070000000000000
           ShowHint = False
-          DataField = 'Id_org_tua'
           DataSet = frxdbdtst1
           DataSetName = 'frxDBDataset'
           Font.Charset = DEFAULT_CHARSET
@@ -621,7 +620,7 @@ object Form6: TForm6
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset."Id_org_tua"]')
+            '[Line]')
           ParentFont = False
           VAlign = vaCenter
         end

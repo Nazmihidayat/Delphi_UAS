@@ -1,6 +1,6 @@
 object Form4: TForm4
-  Left = 392
-  Top = 192
+  Left = 376
+  Top = 277
   Width = 803
   Height = 435
   Caption = 'Form4'
@@ -380,7 +380,6 @@ object Form4: TForm4
           Width = 34.015770000000000000
           Height = 71.811070000000000000
           ShowHint = False
-          DataField = 'Id_user'
           DataSet = frxdbdtst1
           DataSetName = 'frxDBDataset'
           Font.Charset = DEFAULT_CHARSET
@@ -391,7 +390,7 @@ object Form4: TForm4
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset."Id_user"]')
+            '[Line]')
           ParentFont = False
           VAlign = vaCenter
         end
