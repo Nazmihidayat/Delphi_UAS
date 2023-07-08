@@ -121,7 +121,7 @@ begin
     zqry1.SQL.Clear;
     zqry1.SQL.Add('Update poin set Nama_poin = "' + edt_1.Text +
       '", Bobot = "' + edt_2.Text + '", Tipe_poin = "' + edt_3.Text +
-      '" where Id_kelas = "' + id + '"');
+      '" where Id_poin = "' + id + '"');
     zqry1.ExecSQL;
 
     zqry1.SQL.Clear;

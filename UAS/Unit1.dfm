@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 405
-  Top = 135
+  Left = 369
+  Top = 243
   Width = 803
   Height = 476
   Caption = 'Form1'
@@ -68,7 +68,7 @@ object Form1: TForm1
   end
   object l5: TLabel
     Left = 4
-    Top = 144
+    Top = 164
     Width = 101
     Height = 15
     Caption = 'TANGGAL LAHIR'
@@ -81,7 +81,7 @@ object Form1: TForm1
   end
   object l7: TLabel
     Left = 4
-    Top = 172
+    Top = 192
     Width = 95
     Height = 15
     Caption = 'JENIS KELAMIN'
@@ -107,7 +107,7 @@ object Form1: TForm1
   end
   object l9: TLabel
     Left = 320
-    Top = 144
+    Top = 164
     Width = 58
     Height = 15
     Caption = 'JURUSAN'
@@ -159,10 +159,23 @@ object Form1: TForm1
   end
   object l13: TLabel
     Left = 320
-    Top = 168
+    Top = 188
     Width = 47
     Height = 15
     Caption = 'STATUS'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Times New Roman'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label1: TLabel
+    Left = 316
+    Top = 132
+    Width = 91
+    Height = 15
+    Caption = 'TEMPAT LAHIR'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -202,7 +215,7 @@ object Form1: TForm1
       item
         Expanded = False
         FieldName = 'Nama_Siswa'
-        Width = 150
+        Width = 100
         Visible = True
       end
       item
@@ -212,8 +225,14 @@ object Form1: TForm1
       end
       item
         Expanded = False
+        FieldName = 'tempat_lahir'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
         FieldName = 'Tanggal lahir'
-        Width = 150
+        Width = 100
         Visible = True
       end
       item
@@ -224,13 +243,13 @@ object Form1: TForm1
       item
         Expanded = False
         FieldName = 'Tingkat Kelas'
-        Width = 150
+        Width = 100
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Jurusan'
-        Width = 150
+        Width = 100
         Visible = True
       end
       item
@@ -241,7 +260,7 @@ object Form1: TForm1
       item
         Expanded = False
         FieldName = 'Alamat'
-        Width = 150
+        Width = 100
         Visible = True
       end
       item
@@ -345,7 +364,7 @@ object Form1: TForm1
   end
   object dtp1: TDateTimePicker
     Left = 112
-    Top = 140
+    Top = 160
     Width = 181
     Height = 21
     Date = 45067.630714120370000000
@@ -354,7 +373,7 @@ object Form1: TForm1
   end
   object cbb1: TComboBox
     Left = 112
-    Top = 168
+    Top = 188
     Width = 181
     Height = 21
     ItemHeight = 13
@@ -373,7 +392,7 @@ object Form1: TForm1
   end
   object cbb2: TComboBox
     Left = 408
-    Top = 140
+    Top = 160
     Width = 181
     Height = 21
     ItemHeight = 13
@@ -406,7 +425,7 @@ object Form1: TForm1
   end
   object cbb3: TComboBox
     Left = 412
-    Top = 168
+    Top = 188
     Width = 177
     Height = 21
     ItemHeight = 13
@@ -415,6 +434,13 @@ object Form1: TForm1
     Items.Strings = (
       'AKTIF'
       'TIDAK AKTIF')
+  end
+  object Edit1: TEdit
+    Left = 440
+    Top = 128
+    Width = 165
+    Height = 21
+    TabOrder = 19
   end
   object con1: TZConnection
     ControlsCodePage = cGET_ACP
@@ -463,7 +489,7 @@ object Form1: TForm1
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 45097.373740509300000000
-    ReportOptions.LastChange = 45100.702371041670000000
+    ReportOptions.LastChange = 45100.702371041700000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -514,7 +540,7 @@ object Form1: TForm1
         end
       end
       object PageHeader1: TfrxPageHeader
-        Height = 34.015770000000000000
+        Height = 40.682436660000000000
         Top = 83.149660000000000000
         Width = 1511.812000000000000000
         object Memo1: TfrxMemoView
@@ -602,7 +628,7 @@ object Form1: TForm1
           VAlign = vaCenter
         end
         object Memo11: TfrxMemoView
-          Left = 480.000310000000000000
+          Left = 603.333643330000000000
           Width = 117.165430000000000000
           Height = 34.015770000000000000
           ShowHint = False
@@ -619,7 +645,7 @@ object Form1: TForm1
           VAlign = vaCenter
         end
         object Memo14: TfrxMemoView
-          Left = 597.165740000000000000
+          Left = 720.499073330000000000
           Width = 120.944960000000000000
           Height = 34.015770000000000000
           ShowHint = False
@@ -636,7 +662,7 @@ object Form1: TForm1
           VAlign = vaCenter
         end
         object Memo16: TfrxMemoView
-          Left = 718.110700000000000000
+          Left = 841.444033330000000000
           Width = 98.267780000000000000
           Height = 34.015770000000000000
           ShowHint = False
@@ -653,7 +679,7 @@ object Form1: TForm1
           VAlign = vaCenter
         end
         object Memo17: TfrxMemoView
-          Left = 816.378480000000000000
+          Left = 939.711813330000000000
           Width = 120.944960000000000000
           Height = 34.015770000000000000
           ShowHint = False
@@ -670,7 +696,7 @@ object Form1: TForm1
           VAlign = vaCenter
         end
         object Memo18: TfrxMemoView
-          Left = 937.323440000000000000
+          Left = 1060.656773330000000000
           Width = 147.401670000000000000
           Height = 34.015770000000000000
           ShowHint = False
@@ -687,7 +713,7 @@ object Form1: TForm1
           VAlign = vaCenter
         end
         object Memo19: TfrxMemoView
-          Left = 1084.725110000000000000
+          Left = 1208.058443330000000000
           Width = 105.826840000000000000
           Height = 34.015770000000000000
           ShowHint = False
@@ -704,7 +730,7 @@ object Form1: TForm1
           VAlign = vaCenter
         end
         object Memo20: TfrxMemoView
-          Left = 1190.551950000000000000
+          Left = 1313.885283330000000000
           Width = 117.165430000000000000
           Height = 34.015770000000000000
           ShowHint = False
@@ -720,10 +746,28 @@ object Form1: TForm1
           ParentFont = False
           VAlign = vaCenter
         end
+        object Memo26: TfrxMemoView
+          Left = 480.000000000000000000
+          Top = 0.183673340000000000
+          Width = 123.377138890000000000
+          Height = 34.015748030000000000
+          ShowHint = False
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Times New Roman'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            'Tempat lahir')
+          ParentFont = False
+          VAlign = vaCenter
+        end
       end
       object MasterData1: TfrxMasterData
         Height = 71.811070000000000000
-        Top = 177.637910000000000000
+        Top = 185.196970000000000000
         Width = 1511.812000000000000000
         DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset'
@@ -807,7 +851,7 @@ object Form1: TForm1
           VAlign = vaCenter
         end
         object Memo12: TfrxMemoView
-          Left = 480.000310000000000000
+          Left = 603.333643330000000000
           Width = 117.165430000000000000
           Height = 71.811070000000000000
           ShowHint = False
@@ -847,7 +891,7 @@ object Form1: TForm1
           VAlign = vaCenter
         end
         object Memo15: TfrxMemoView
-          Left = 597.165740000000000000
+          Left = 720.499073330000000000
           Width = 120.944960000000000000
           Height = 71.811070000000000000
           ShowHint = False
@@ -867,7 +911,7 @@ object Form1: TForm1
           VAlign = vaCenter
         end
         object Memo21: TfrxMemoView
-          Left = 718.110700000000000000
+          Left = 841.444033330000000000
           Width = 98.267780000000000000
           Height = 71.811070000000000000
           ShowHint = False
@@ -887,7 +931,7 @@ object Form1: TForm1
           VAlign = vaCenter
         end
         object Memo22: TfrxMemoView
-          Left = 937.323440000000000000
+          Left = 1060.656773330000000000
           Width = 147.401670000000000000
           Height = 71.811070000000000000
           ShowHint = False
@@ -907,7 +951,7 @@ object Form1: TForm1
           VAlign = vaCenter
         end
         object Memo23: TfrxMemoView
-          Left = 1084.725110000000000000
+          Left = 1208.058443330000000000
           Width = 105.826840000000000000
           Height = 71.811070000000000000
           ShowHint = False
@@ -927,7 +971,7 @@ object Form1: TForm1
           VAlign = vaCenter
         end
         object Memo24: TfrxMemoView
-          Left = 1190.551950000000000000
+          Left = 1313.885283330000000000
           Width = 117.165430000000000000
           Height = 71.811070000000000000
           ShowHint = False
@@ -947,7 +991,7 @@ object Form1: TForm1
           VAlign = vaCenter
         end
         object Memo25: TfrxMemoView
-          Left = 816.378480000000000000
+          Left = 939.711813330000000000
           Width = 120.944960000000000000
           Height = 71.811070000000000000
           ShowHint = False
@@ -966,11 +1010,33 @@ object Form1: TForm1
           ParentFont = False
           VAlign = vaCenter
         end
+        object Memo27: TfrxMemoView
+          Left = 480.000000000000000000
+          Top = 0.183673330000000000
+          Width = 123.604617780000000000
+          Height = 71.811070000000000000
+          ShowHint = False
+          DataField = 'tempat_lahir'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Times New Roman'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            '[frxDBDataset."tempat_lahir"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
       end
     end
   end
   object zqry2: TZQuery
     Connection = con1
+    Active = True
     SQL.Strings = (
       'select * from siswa')
     Params = <>

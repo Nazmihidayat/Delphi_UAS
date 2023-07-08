@@ -35,6 +35,10 @@ type
     zqry1: TZQuery;
     lbll5: TLabel;
     dtp1: TDateTimePicker;
+    Label1: TLabel;
+    Label2: TLabel;
+    Edit1: TEdit;
+    Edit2: TEdit;
     procedure btnb1Click(Sender: TObject);
     procedure btnb2Click(Sender: TObject);
     procedure btnb3Click(Sender: TObject);
@@ -71,6 +75,8 @@ begin
   edt_3.Enabled := True;
   edt_4.Enabled := True;
   edt_5.Enabled := True;
+  Edit1.Enabled := True;
+  Edit2.Enabled := True;
   dtp1.Enabled:= True;
 end;
 
@@ -96,6 +102,14 @@ begin
   begin
     ShowMessage('ID Poin BELUM SESUAI');
   end
+  else if Edit1.Text = '' then
+  begin
+    ShowMessage('KETERANGAN BELUM SESUAI');
+  end
+  else if Edit2.Text = '' then
+  begin
+    ShowMessage('STATUS BELUM SESUAI');
+  end
   else if zqry1.Locate(' Semester', edt_1.Text, []) then
   begin
     ShowMessage('DATA SUDAH ADA DALAM SISTEM');
@@ -103,7 +117,7 @@ begin
   else
   begin
     zqry1.SQL.Clear;
-    zqry1.SQL.Add('insert into catatan values(null,"'+FormatDateTime('yyyy-mm-dd', dtp1.Date) + '" , "' + edt_1.Text + '" ,"' + edt_2.Text + '", "' +edt_3.Text + '", "' + edt_4.Text + '","' + edt_5.Text + '")');
+    zqry1.SQL.Add('insert into catatan values(null,"'+FormatDateTime('yyyy-mm-dd', dtp1.Date) + '" , "' + edt_1.Text + '" ,"' + edt_2.Text + '", "' +edt_3.Text + '", "' + edt_4.Text + '","' + edt_5.Text + '","' + Edit1.Text + '","' + Edit2.Text + '")');
     zqry1.ExecSQL;
 
     zqry1.SQL.Clear;
@@ -117,7 +131,7 @@ end;
 procedure TForm8.btnb3Click(Sender: TObject);
 begin
   if (edt_1.Text = '') or (edt_2.Text = '') or (edt_3.Text = '') or
-    (edt_4.Text = '')  or (edt_5.Text = '') then
+    (edt_4.Text = '')  or (edt_5.Text = '')or (Edit1.Text = '')or (Edit2.Text = '') then
   begin
     ShowMessage('INPUTAN WAJIB DIISI!');
   end
@@ -133,7 +147,7 @@ begin
     zqry1.SQL.Add('Update catatan set Semester = "' + edt_1.Text +
       '", Id_siswa = "' + edt_2.Text + '", Id_wali_kelas = "' + edt_3.Text +
       '", Id_org_tua = "' + edt_4.Text + '", Id_poin = "' + edt_5.Text +
-      '" where 	Id_catatan = "' + id + '"');
+      '",keterangan = "' + Edit1.Text +'",status = "' + Edit2.Text +'" where 	Id_catatan = "' + id + '"');
     zqry1.ExecSQL;
 
     zqry1.SQL.Clear;
@@ -187,6 +201,8 @@ begin
   edt_2.Enabled := false;
   edt_3.Enabled := false;
   edt_4.Enabled := false;
+  Edit1.Enabled := false;
+  Edit2.Enabled := false;
   dtp1.Enabled := false;
   edt_5.Enabled := false;
 end;
@@ -206,6 +222,8 @@ begin
   edt_4.Enabled := false;
   dtp1.Enabled := false;
   edt_5.Enabled := false;
+  Edit1.Enabled := false;
+  Edit2.Enabled := false;
 end;
 
 procedure TForm8.dbgrd1CellClick(Column: TColumn);
@@ -216,12 +234,16 @@ begin
   edt_3.Text := zqry1.Fields[4].AsString;
   edt_4.Text := zqry1.Fields[5].AsString;
   edt_5.Text := zqry1.Fields[6].AsString;
+  Edit1.Text := zqry1.Fields[7].AsString;
+  Edit2.Text := zqry1.Fields[8].AsString;
   edt_1.Enabled := True;
   edt_2.Enabled := True;
   edt_3.Enabled := True;
   edt_4.Enabled := True;
   dtp1.Enabled := True;
   edt_5.Enabled := True;
+  Edit1.Enabled := True;
+  Edit2.Enabled := True;
 
   btnb1.Enabled := false;
   btnb2.Enabled := False;
@@ -237,5 +259,7 @@ edt_1.Clear;
   edt_3.Clear;
   edt_4.Clear;
   edt_5.Clear;
+  Edit1.Clear;
+  Edit2.Clear;
 end;
 end.

@@ -1,6 +1,6 @@
 object Form6: TForm6
-  Left = 302
-  Top = 231
+  Left = 436
+  Top = 127
   Width = 804
   Height = 455
   Caption = 'Form6'
@@ -66,25 +66,12 @@ object Form6: TForm6
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object lbll5: TLabel
-    Left = 4
-    Top = 144
-    Width = 101
-    Height = 15
-    Caption = 'TANGGAL LAHIR'
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -13
-    Font.Name = 'Times New Roman'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
   object lbll7: TLabel
     Left = 4
     Top = 172
-    Width = 95
+    Width = 79
     Height = 15
-    Caption = 'Status Pekerjaan'
+    Caption = 'Jenis Kelamin'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -124,6 +111,19 @@ object Form6: TForm6
     Width = 109
     Height = 15
     Caption = 'STATUS Orang Tua'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Times New Roman'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label1: TLabel
+    Left = 332
+    Top = 80
+    Width = 38
+    Height = 15
+    Caption = 'Agama'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -219,40 +219,31 @@ object Form6: TForm6
     Height = 21
     TabOrder = 9
   end
-  object dtp1: TDateTimePicker
-    Left = 112
-    Top = 140
-    Width = 181
-    Height = 21
-    Date = 45067.630714120370000000
-    Time = 45067.630714120370000000
-    TabOrder = 10
-  end
   object cbb1: TComboBox
     Left = 112
     Top = 168
     Width = 181
     Height = 21
     ItemHeight = 13
-    TabOrder = 11
-    Text = '---PILIH STATUS PEKERJAAN---'
+    TabOrder = 10
+    Text = '---PILIH JENIS KELAMIN---'
     Items.Strings = (
-      'MASIH BEKERJA'
-      'PENSIUN')
+      'LAKI-LAKI'
+      'PEREMPUAN')
   end
   object edt_5: TEdit
     Left = 456
     Top = 8
     Width = 145
     Height = 21
-    TabOrder = 12
+    TabOrder = 11
   end
   object edt_6: TEdit
     Left = 456
     Top = 40
     Width = 145
     Height = 21
-    TabOrder = 13
+    TabOrder = 12
   end
   object cbb3: TComboBox
     Left = 440
@@ -260,11 +251,11 @@ object Form6: TForm6
     Width = 177
     Height = 21
     ItemHeight = 13
-    TabOrder = 14
+    TabOrder = 13
     Text = '---PILIH STATUS---'
     Items.Strings = (
-      'KANDUNG'
-      'ORANG TUA ANGKAT')
+      'HIDUP'
+      'MENINGGAL')
   end
   object dbgrd1: TDBGrid
     Left = 36
@@ -272,7 +263,7 @@ object Form6: TForm6
     Width = 737
     Height = 120
     DataSource = ds1
-    TabOrder = 15
+    TabOrder = 14
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
@@ -282,63 +273,70 @@ object Form6: TForm6
     Columns = <
       item
         Expanded = False
-        FieldName = 'Id_orgtua'
+        FieldName = 'Id_org_tua'
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Nama_orangtua'
-        Width = 150
+        Width = 100
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'Tanggal lahir'
-        Width = 150
+        FieldName = 'Agama'
+        Width = 100
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Telp'
-        Width = 150
+        Width = 100
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Pendidikan_terakhir'
-        Width = 150
+        Width = 100
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'Status_pekerjaan'
-        Width = 150
+        FieldName = 'jenis_kelamin'
+        Width = 100
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Pekerjaan'
-        Width = 150
+        Width = 100
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Nik_nomor_KTP'
-        Width = 150
+        Width = 100
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Alamat_org_tua'
-        Width = 150
+        Width = 100
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Status_org_tua'
-        Width = 150
+        Width = 100
         Visible = True
       end>
+  end
+  object Edit1: TEdit
+    Left = 456
+    Top = 72
+    Width = 145
+    Height = 21
+    TabOrder = 15
   end
   object con1: TZConnection
     ControlsCodePage = cGET_ACP
@@ -475,7 +473,7 @@ object Form6: TForm6
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            'Tanggal Lahir')
+            'Agama')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -526,7 +524,7 @@ object Form6: TForm6
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            'Status pekerjaan')
+            'Jenis Kelamin')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -689,7 +687,7 @@ object Form6: TForm6
           Width = 117.165430000000000000
           Height = 71.811070000000000000
           ShowHint = False
-          DataField = 'Status_pekerjaan'
+          DataField = 'jenis_kelamin'
           DataSet = frxdbdtst1
           DataSetName = 'frxDBDataset'
           Font.Charset = DEFAULT_CHARSET
@@ -700,7 +698,7 @@ object Form6: TForm6
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset."Status_pekerjaan"]')
+            '[frxDBDataset."jenis_kelamin"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -709,7 +707,7 @@ object Form6: TForm6
           Width = 94.488250000000000000
           Height = 71.811070000000000000
           ShowHint = False
-          DataField = 'Tanggal lahir'
+          DataField = 'Agama'
           DataSet = frxdbdtst1
           DataSetName = 'frxDBDataset'
           Font.Charset = DEFAULT_CHARSET
@@ -720,7 +718,7 @@ object Form6: TForm6
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset."Tanggal lahir"]')
+            '[frxDBDataset."Agama"]')
           ParentFont = False
           VAlign = vaCenter
         end

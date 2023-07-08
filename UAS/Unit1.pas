@@ -47,6 +47,8 @@ type
     l12: TLabel;
     l13: TLabel;
     cbb3: TComboBox;
+    Label1: TLabel;
+    Edit1: TEdit;
     procedure b1Click(Sender: TObject);
     procedure b2Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -84,6 +86,7 @@ e_1.Enabled:= True;
 e_2.Enabled:= True;
 e_3.Enabled:= True;
 e_4.Enabled:= True;
+Edit1.Enabled:=True;
 dtp1.Enabled:= True;
 cbb1.Enabled:= True;
 e_5.Enabled:= True;
@@ -132,6 +135,10 @@ begin
     begin
      ShowMessage('INPUTAN ALAMAT BELUM SESUAI');
     end else
+     if Edit1.text=''then
+    begin
+     ShowMessage('Tempat lahir BELUM SESUAI');
+    end else
     if (e_8.Text='-') then
       begin
      ShowMessage(' NO TELP BELUM SESUAI');
@@ -147,7 +154,7 @@ begin
   begin
 
  zqry1.SQL.Clear;
- zqry1.SQL.Add('insert into siswa values(null,"'+e_1.Text+'","'+e_2.Text+'","'+e_3.Text+'","'+e_4.Text+'","'+formatdatetime('yyyy-mm-dd',dtp1.Date)+'","'+cbb1.Text+'","'+e_5.Text+'","'+cbb2.Text+'","'+e_6.Text+'","'+e_7.Text+'","'+e_8.Text+'","'+cbb3.Text+'")');
+ zqry1.SQL.Add('insert into siswa values(null,"'+e_1.Text+'","'+e_2.Text+'","'+e_3.Text+'","'+e_4.Text+'","'+Edit1.Text+'","'+formatdatetime('yyyy-mm-dd',dtp1.Date)+'","'+cbb1.Text+'","'+e_5.Text+'","'+cbb2.Text+'","'+e_6.Text+'","'+e_7.Text+'","'+e_8.Text+'","'+cbb3.Text+'")');
  zqry1.ExecSQL ;
 
  zqry1.SQL.Clear;
@@ -159,7 +166,7 @@ end;
 end;
 procedure TForm1.b3Click(Sender: TObject);
 begin
-if (e_1.Text= '')or (e_2.Text ='')or(e_3.Text= '')or (e_4.Text ='')or(cbb1.Text='')or(e_5.Text ='')or(cbb2.Text='')or(e_6.Text='')or(e_7.Text='')or(e_8.Text='')or(cbb3.Text='') then
+if (e_1.Text= '')or (e_2.Text ='')or(e_3.Text= '')or (e_4.Text ='')or(Edit1.Text ='')or(cbb1.Text='')or(e_5.Text ='')or(cbb2.Text='')or(e_6.Text='')or(e_7.Text='')or(e_8.Text='')or(cbb3.Text='') then
 begin
   ShowMessage('INPUTAN WAJIB DIISI!');
 end else
@@ -171,7 +178,7 @@ end else
 begin
  ShowMessage('DATA BERHASIL DIUPDATE!');
 zqry1.SQL.Clear;
-zqry1.SQL.Add('Update siswa set Nis= "'+e_1.Text+'",Nisn="'+e_2.Text+'",Nama_Siswa="'+e_3.Text+'",Nik="'+e_4.Text+'" where Id_Siswa="'+Id+'"');
+zqry1.SQL.Add('Update siswa set Nis= "'+e_1.Text+'",Nisn="'+e_2.Text+'",Nama_Siswa="'+e_3.Text+'",Nik="'+e_4.Text+'",tempat_lahir="'+Edit1.Text+'" where Id_Siswa="'+Id+'"');
 zqry1. ExecSQL;
 
 zqry1.SQL.Clear;
@@ -218,6 +225,7 @@ e_5.Clear;
 e_6.Clear;
 e_7.Clear;
 e_8.Clear;
+Edit1.Clear;
 end;
 
 procedure TForm1.FormShow(Sender: TObject);
@@ -228,7 +236,7 @@ b2.Enabled:=false;
 b3.Enabled:=false;
 b4.Enabled:=false;
 b5.Enabled:=false;
-b6.Enabled:=false;
+b6.Enabled:=True;
 e_1.Enabled:= false;
 e_2.Enabled:= false;
 e_3.Enabled:= false;
@@ -241,6 +249,7 @@ e_6.Enabled:= false;
 e_7.Enabled:= false;
 e_8.Enabled:= false;
 cbb3.Enabled:= false;
+Edit1.Enabled:=False;
 end;
 
 procedure TForm1.posisiawal;
@@ -272,13 +281,14 @@ e_1.Text:= zqry1.Fields[1].AsString;
 e_2.Text:= zqry1.Fields[2].AsString;
 e_3.Text:= zqry1.Fields[3].AsString;
 e_4.Text:= zqry1.Fields[4].AsString;
-cbb1.Text:= zqry1.Fields[6].AsString;
-e_5.Text:= zqry1.Fields[7].AsString;
-cbb2.Text:= zqry1.Fields[8].AsString;
-e_6.Text:= zqry1.Fields[9].AsString;
-e_7.Text:= zqry1.Fields[10].AsString;
-e_8.Text:= zqry1.Fields[11].AsString;
-cbb3.Text:= zqry1.Fields[12].AsString;
+Edit1.Text:= zqry1.Fields[5].AsString;
+cbb1.Text:= zqry1.Fields[7].AsString;
+e_5.Text:= zqry1.Fields[8].AsString;
+cbb2.Text:= zqry1.Fields[9].AsString;
+e_6.Text:= zqry1.Fields[10].AsString;
+e_7.Text:= zqry1.Fields[11].AsString;
+e_8.Text:= zqry1.Fields[12].AsString;
+cbb3.Text:= zqry1.Fields[13].AsString;
 e_1.Enabled:= True;
 e_2.Enabled:= True;
 e_3.Enabled:= True;
@@ -291,7 +301,7 @@ e_6.Enabled:= True;
 e_7.Enabled:= True;
 e_8.Enabled:= True;
 cbb3.Enabled:= True;
-
+Edit1.enabled:=true;
 b1.Enabled:= false;
 b2.Enabled:= False;
 b3.Enabled:= True;

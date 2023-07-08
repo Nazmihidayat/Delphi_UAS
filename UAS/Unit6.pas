@@ -14,7 +14,6 @@ type
     lbll3: TLabel;
     lbll6: TLabel;
     lbll4: TLabel;
-    lbll5: TLabel;
     lbll7: TLabel;
     lbll8: TLabel;
     lbll10: TLabel;
@@ -29,7 +28,6 @@ type
     edt_2: TEdit;
     edt_3: TEdit;
     edt_4: TEdit;
-    dtp1: TDateTimePicker;
     cbb1: TComboBox;
     edt_5: TEdit;
     edt_6: TEdit;
@@ -41,6 +39,8 @@ type
     frxrprt1: TfrxReport;
     zqry2: TZQuery;
     zqry1: TZQuery;
+    Label1: TLabel;
+    Edit1: TEdit;
     procedure btnb1Click(Sender: TObject);
     procedure btnb2Click(Sender: TObject);
     procedure btnb3Click(Sender: TObject);
@@ -76,7 +76,7 @@ begin
   edt_2.Enabled := True;
   edt_3.Enabled := True;
   edt_4.Enabled := True;
-  dtp1.Enabled := True;
+  Edit1.Enabled := True;
   cbb1.Enabled := True;
   edt_5.Enabled := True;
   edt_6.Enabled := True;
@@ -109,6 +109,10 @@ begin
   begin
     ShowMessage('Nik_nomor_KTP BELUM SESUAI');
   end
+   else if Edit1.Text = '' then
+  begin
+    ShowMessage('AGAMA BELUM SESUAI');
+  end
   else if edt_6.Text = '' then
   begin
     ShowMessage(' Alamat_org_tua BELUM SESUAI');
@@ -125,9 +129,9 @@ begin
   begin
     zqry1.SQL.Clear;
     zqry1.SQL.Add('insert into orang_tua values(null, "' + edt_1.Text + '", "' +
-      FormatDateTime('yyyy-mm-dd', dtp1.Date) + '", "' + edt_2.Text + '", "' +
+      Edit1.Text + '", "' + edt_2.Text + '", "' +
       edt_3.Text + '", "' + cbb1.Text + '", "' + edt_4.Text + '", "' +
-      cbb3.Text + '", "' + edt_5.Text + '", "' + edt_6.Text + '")');
+      edt_5.Text + '", "' + edt_6.Text + '", "' + cbb3.Text + '")');
     zqry1.ExecSQL;
                               //                     // "' +cbb3.Text + '"    //
     zqry1.SQL.Clear;
@@ -140,7 +144,7 @@ end;
 
 procedure TForm6.btnb3Click(Sender: TObject);
 begin
-  if (edt_1.Text = '') or (edt_2.Text = '') or (edt_3.Text = '') or
+  if (edt_1.Text = '') or (edt_2.Text = '') or (edt_3.Text = '') or (Edit1.Text = '') or
     (edt_4.Text = '') or (cbb1.Text = '') or (edt_5.Text = '') or
     (edt_6.Text = '') or (cbb3.Text = '') then
   begin
@@ -156,7 +160,7 @@ begin
     ShowMessage('DATA BERHASIL DIUPDATE!');
     zqry1.SQL.Clear;
     zqry1.SQL.Add('Update orang_tua set Nama_orangtua = "' + edt_1.Text +
-      '", Telp = "' + edt_2.Text + '", Pendidikan_terakhir = "' + edt_3.Text +
+      '", Agama = "' + Edit1.Text + '", Telp = "' + edt_2.Text + '", Pendidikan_terakhir = "' + edt_3.Text +
       '", Pekerjaan = "' + edt_4.Text + '", Nik_nomor_KTP = "' + edt_5.Text +
       '", Alamat_org_tua = "' + edt_6.Text + '" where Id_org_tua = "' + id + '"');
     zqry1.ExecSQL;
@@ -212,7 +216,7 @@ begin
   edt_2.Enabled := false;
   edt_3.Enabled := false;
   edt_4.Enabled := false;
-  dtp1.Enabled := false;
+  Edit1.Enabled := false;
   cbb1.Enabled := false;
   edt_5.Enabled := false;
   cbb3.Enabled := false;
@@ -232,7 +236,7 @@ begin
   edt_2.Enabled := false;
   edt_3.Enabled := false;
   edt_4.Enabled := false;
-  dtp1.Enabled := false;
+  Edit1.Enabled := false;
   cbb1.Enabled := false;
   edt_5.Enabled := false;
   cbb3.Enabled := false;
@@ -243,6 +247,7 @@ procedure TForm6.dbgrd1CellClick(Column: TColumn);
 begin
   id := zqry1.Fields[0].AsString;
   edt_1.Text := zqry1.Fields[1].AsString;
+  Edit1.Text := zqry1.Fields[2].AsString;
   edt_2.Text := zqry1.Fields[3].AsString;
   edt_3.Text := zqry1.Fields[4].AsString;
   edt_4.Text := zqry1.Fields[6].AsString;
@@ -254,7 +259,7 @@ begin
   edt_2.Enabled := True;
   edt_3.Enabled := True;
   edt_4.Enabled := True;
-  dtp1.Enabled := True;
+  Edit1.Enabled := True;
   cbb1.Enabled := True;
   edt_5.Enabled := True;
   edt_6.Enabled := True;
@@ -275,6 +280,7 @@ edt_1.Clear;
   edt_4.Clear;
   edt_5.Clear;
   edt_6.Clear;
+  Edit1.Clear;
 end;
 
 end.

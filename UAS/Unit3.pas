@@ -11,7 +11,6 @@ type
   TForm3 = class(TForm)
     lbll1: TLabel;
     lbll3: TLabel;
-    lbll6: TLabel;
     btnb1: TButton;
     btnb2: TButton;
     btnb3: TButton;
@@ -20,7 +19,6 @@ type
     btnb6: TButton;
     edt_1: TEdit;
     edt_2: TEdit;
-    edt_3: TEdit;
     dbgrd1: TDBGrid;
     con1: TZConnection;
     ds1: TDataSource;
@@ -55,7 +53,6 @@ procedure TForm3.bersih;
 begin
   edt_1.Clear;
   edt_2.Clear;
-  edt_3.Clear;
 end;
 
 procedure TForm3.btnb1Click(Sender: TObject);
@@ -68,7 +65,6 @@ begin
   btnb6.Enabled := True;
   edt_1.Enabled := True;
   edt_2.Enabled := True;
-  edt_3.Enabled := True;
 end;
 
 procedure TForm3.btnb2Click(Sender: TObject);
@@ -81,10 +77,6 @@ begin
   begin
     ShowMessage('Jurusan BELUM DIISI DENGAN BENAR');
   end
-  else if edt_3.Text = '' then
-  begin
-    ShowMessage('Total Kehadiran BELUM DIISI DENGAN BENAR');
-  end
   else if zqry1.Locate(' Nama_kelas', edt_1.Text, []) then
   begin
     ShowMessage('DATA SUDAH ADA DALAM SISTEM');
@@ -92,8 +84,7 @@ begin
   else
   begin
     zqry1.SQL.Clear;
-    zqry1.SQL.Add('insert into kelas values(null, "' + edt_1.Text + '", "' + edt_2.Text + '", "' +
-      edt_3.Text + '")');
+    zqry1.SQL.Add('insert into kelas values(null, "' + edt_1.Text + '", "' + edt_2.Text + '")');
     zqry1.ExecSQL;
 
     zqry1.SQL.Clear;
@@ -106,7 +97,7 @@ end;
 
 procedure TForm3.btnb3Click(Sender: TObject);
 begin
-  if (edt_1.Text = '') or (edt_2.Text = '') or (edt_3.Text = '')then
+  if (edt_1.Text = '') or (edt_2.Text = '')then
   begin
     ShowMessage('INPUTAN WAJIB DIISI!');
   end
@@ -120,8 +111,7 @@ begin
     ShowMessage('DATA BERHASIL DIUPDATE!');
     zqry1.SQL.Clear;
     zqry1.SQL.Add('Update kelas set Nama_kelas = "' + edt_1.Text +
-      '", Jurusan = "' + edt_2.Text + '", Total_kehadiran = "' + edt_3.Text +
-      '" where Id_kelas = "' + id + '"');
+      '", Jurusan = "' + edt_2.Text + '" where Id_kelas = "' + id + '"');
     zqry1.ExecSQL;
 
     zqry1.SQL.Clear;
@@ -173,7 +163,6 @@ begin
   btnb6.Enabled := True;
   edt_1.Enabled := false;
   edt_2.Enabled := false;
-  edt_3.Enabled := false;
 end;
 
 procedure TForm3.FormShow(Sender: TObject);
@@ -187,7 +176,6 @@ begin
   btnb6.Enabled := True;
   edt_1.Enabled := false;
   edt_2.Enabled := false;
-  edt_3.Enabled := false;
 end;
 
 procedure TForm3.dbgrd1CellClick(Column: TColumn);
@@ -195,11 +183,8 @@ begin
   id := zqry1.Fields[0].AsString;
   edt_1.Text := zqry1.Fields[1].AsString;
   edt_2.Text := zqry1.Fields[2].AsString;
-  edt_3.Text := zqry1.Fields[3].AsString;
   edt_1.Enabled := True;
   edt_2.Enabled := True;
-  edt_3.Enabled := True;
-
   btnb1.Enabled := false;
   btnb2.Enabled := False;
   btnb3.Enabled := True;
